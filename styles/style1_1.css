@@ -1,13 +1,13 @@
 body {
     font-family: sans-serif;
-    background-image: url();
-    margin-top: 0;
+    margin-top: auto;
+    background: url(bg.png) left top repeat;
 }
 
 .button {
-    background-color: brown; 
+    background-color: white; 
     border: none;
-    color: white;
+    color: brown;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -18,17 +18,28 @@ body {
     cursor: pointer;
 }
 
+#alles {
+    margin: 0 auto;
+    width: 1250px;   
+}
+
+#alles2 {
+    margin: 0 auto;
+    width: 800px; 
+}
+
 .button1 {
-        background-color: white; 
-        color: brown; 
-        border: 2px solid brown;
+        background-color: brown; 
+        color: white; 
+        border: 2px solid white;
         border-radius: 12px;
-      }
+}
 
 .button1:hover {
-        background-color: brown;
-        color: white;
-      }
+background-color: white;
+color:brown ;
+}
+
 h3 {
     color: brown;
 }
@@ -73,12 +84,23 @@ nav {
     color: white;
     margin-top: -400px;
 }
-.column {
+
+  .col-75 {
     float: left;
-    width: 100%;
-    padding: 200px;
+    width: 75%;
+    margin-top: 6px;
   }
-  body {
-    background: url(bg.png) left top repeat;
-    padding: none;
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  textarea {
+
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
   }
