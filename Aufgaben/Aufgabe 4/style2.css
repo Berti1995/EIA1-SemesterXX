@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+    margin-top: auto;
+    background: url(bg2.png) left top repeat;
+}
+#wrapperbg{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#shell1{
+    display: flex;
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+#shell2{
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+#icon {
+    position: absolute;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+
+#icon:hover {
+transform: scale(1.3);
+}

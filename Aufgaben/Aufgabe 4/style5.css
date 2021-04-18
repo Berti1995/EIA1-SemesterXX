@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+    margin-top: auto;
+    background: url(bg5.png) left top repeat;
+}
+#wrapperbg{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.column {
+    float: left;
+    padding: 10px;
+    width: 160px;
+    
+  }
+  
+  .column2 {
+    float: left;
+    padding: 10px;
+    width: 130px;
+    transform: translate(90%, -30%);
+  }
+
+  div.absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 540px;
+    height: 350px;
+  }
+
+ 
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }  
+  
+
