@@ -4,26 +4,30 @@ body {
     background: url(bg2.png) left top repeat;
 }
 #wrapperbg{
-    display: flex;
+    background: url(wrapperbg2.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 600px;
+    height: 400px;
+    margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
-#shell1{
-    display: flex;
-    position: absolute;
-    top: 60%;
-    left: 60%;
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
-#shell2{
-    display: flex;
+.shell1{
     position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 30%;
+
+}
+
+.shell2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 #icon {

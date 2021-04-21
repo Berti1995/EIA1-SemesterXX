@@ -4,61 +4,48 @@ body {
     background: url(bg4.png) left top repeat;
 }
 #wrapperbg{
-    display: flex;
+    background: url(wrapperbg4.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 600px;
+    height: 400px;
+    margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+.posit{
+    left: 8%;
+    top: 8%;
+    position: relative;
 }
 
 .lorem {
     color: white;
-    display: flex;
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    transform: translate(-50%, -50%);
+    position: relative;
 }
 
 .formular {
     color: black;
-    display: flex;
-    position: absolute;
-    top: 40%;
-    left: 39%;
-    transform: translate(-50%, -50%);
+    position: relative;
 }
 .formular2 {
     color: black;
-    display: flex;
-    position: absolute;
-    top: 48%;
-    left: 40%;
-    transform: translate(-50%, -50%);
+    position: relative;
 }
 .check {
     color: white;
-    display: flex;
-    position: absolute;
-    top: 56%;
-    left: 39%;
-    transform: translate(-50%, -50%);
+    position: relative;
 }
 .check2 {
     color: white;
-    display: flex;
-    position: absolute;
-    top: 56%;
-    left: 35%;
-    transform: translate(-50%, -50%);
+    position: relative;
 }
 .button {
     color: white;
-    display: flex;
-    position: absolute;
-    top: 61%;
-    left: 35%;
-    transform: translate(-50%, -50%);
+    position: relative;
     text-align: center;
     text-decoration: none;
     display: inline-block;

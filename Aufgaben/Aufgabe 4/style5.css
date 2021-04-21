@@ -4,24 +4,31 @@ body {
     background: url(bg5.png) left top repeat;
 }
 #wrapperbg{
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  background: url(wrapperbg5.png) ;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 600px;
+  height: 400px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .column {
     float: left;
-    padding: 10px;
-    width: 160px;
+    position: relative;
+    width: 30%;
+    left: 5%;
     
   }
   
   .column2 {
     float: left;
-    padding: 10px;
-    width: 130px;
-    transform: translate(90%, -30%);
+    position: relative;
+    width: 37%;
+   left: 15%;
   }
 
   div.absolute {
