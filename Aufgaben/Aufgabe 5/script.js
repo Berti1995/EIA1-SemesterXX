@@ -57,7 +57,7 @@ console.log("Für northamerica hat sich 2018 im Vergleich zu 2008 die Emission u
 console.log("2018 im Vergleich zu 2008 sind das" + roundTwo(northamerica08_18kg) + "kg CO2");
 console.log("Die Emission von southamerica ist:" + southamerica_2018 + "kg CO2");
 console.log("Relativ zur Gesamtemission der Welt verursacht southamerica damit" + roundTwo(southamerica_whole2018) + "%");
-console.log("Für Europa hat sich 2018 im Vergleich zu 2008 die Emission um" + roundTwo(southamerica08_18pro) + "% verändert");
+console.log("Für southamerica hat sich 2018 im Vergleich zu 2008 die Emission um" + roundTwo(southamerica08_18pro) + "% verändert");
 console.log("2018 im Vergleich zu 2008 sind das" + roundTwo(southamerica08_18kg) + "kg CO2");
 function roundTwo(x) {
     return Math.round(x * 100) / 100;
