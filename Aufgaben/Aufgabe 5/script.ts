@@ -1,43 +1,61 @@
-function roundTwo(x: number): number{
-    return Math.round(x * 100) / 100;
-}
-
 var africa_2008: number = 1028;
 var africa_2018: number = 1235.5;
-var africa: string ="Africa";
+var africaName: string ="Africa";
 
 
 var asia_2008: number = 12954.7;
 var asia_2018: number = 16274.1;
-var asia: string ="Asia";
+var asiaName: string ="Asia";
 
 
 var australia_2008: number = 1993;
 var australia_2018: number = 2100.5;
-var australia: string ="Australia";
+var australiaName: string ="Australia";
 
 
 var europe_2008: number = 4965.7;
 var europe_2018: number = 4209.3;
-var europe: string ="Europe";
+var europeName: string ="Europe";
 
 
 var northamerica_2008: number = 6600.4;
 var northamerica_2018: number = 6035.6;
-var northamerica: string ="Northamerica";
+var northamericaName: string ="Northamerica";
 
 
 var southamerica_2008: number = 1132.6;
 var southamerica_2018: number = 1261.5;
-var southamerica: string ="Southamerica";
+var southamericaName: string ="Southamerica";
 
 
 var wholeworld_2018 = africa_2018 + asia_2018 + australia_2018 + northamerica_2018 + southamerica_2018 + europe_2018;
 
 document.querySelector("h2").id = "Text";
 
+function roundTwo(x: number): number{
+    return Math.round(x * 100) / 100;
+}
 
 
+function myFunction(name: string, value_2008: number, value_2018: number ){
+    document.querySelector("#titleRegion").innerHTML = name;
+    document.querySelector(".H2eins").innerHTML = + value_2018 + "";
+    document.querySelector(".H2zwei").innerHTML = + roundTwo(value_2018 / wholeworld_2018 *100) + "%";
+    document.querySelector(".H2drei").innerHTML = + roundTwo((value_2018 - value_2008) / value_2008 * 100) + "%";
+    document.querySelector(".H2vier").innerHTML = + roundTwo(value_2018 - value_2008) + "";
+    document.querySelector(".chart").setAttribute("style", "height:" + roundTwo(value_2018 / wholeworld_2018 *100) + "%");
+    document.querySelector("body").setAttribute("style", "color: white");  
+}
+
+document.querySelector(".europe").addEventListener("click", myFunction.bind( null,"Europe", europe_2018, europe_2008, europeName ));
+document.querySelector(".africa").addEventListener("click", myFunction.bind( null,"Africa", africa_2018, africa_2008, africaName ));
+document.querySelector(".asia").addEventListener("click", myFunction.bind( null,"Asia", asia_2018, asia_2008, asiaName ));
+document.querySelector(".northamerica").addEventListener("click", myFunction.bind( null,"Northamerica", northamerica_2018, northamerica_2008, northamericaName ));
+document.querySelector(".southamerica").addEventListener("click", myFunction.bind( null,"Southamerica", southamerica_2018, southamerica_2008, southamericaName ));
+document.querySelector(".australia").addEventListener("click", myFunction.bind( null,"Australia", australia_2018, australia_2008, australiaName ));
+
+
+/*
 function titelEurope() {
 
     document.querySelector("#titleRegion").innerHTML = "Europe";
@@ -111,4 +129,5 @@ function titelSouthamerica() {
     document.querySelector(".chart").setAttribute("style", "height: 4.05%");
     document.querySelector("body").setAttribute("style", "color: purple");
 }
-document.querySelector(".southamerica").addEventListener("click", titelSouthamerica);
+document.querySelector(".southamerica").addEventListener("click", titelSouthamerica)
+*/
