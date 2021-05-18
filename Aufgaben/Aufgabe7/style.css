@@ -1,6 +1,13 @@
 body{    background-color: black;
 }
 
+#drumpad2 {
+    height: 600px;
+    width: 480px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
 #drumpad {
     height: 480px;
     width: 480px;
@@ -128,7 +135,41 @@ body{    background-color: black;
 }
 
 .playbutton {
-    display: flex; 
-    justify-content: center; 
+    position: absolute;
     cursor: pointer;
+    font-size: 100px;
+    color: white;
+   left: 0px;
+    }
+
+.stop {
+        position: absolute;
+        cursor: pointer;
+        font-size: 100px;
+        color: white;
+       left: 0px;
+        }
+
+
+.random {
+    position: absolute;
+    font-size: 100px;
+    cursor: pointer;
+    color: white;
+    right: 37.5%;
+   
+
+    
+}
+.delete {
+    position: absolute;
+    font-size: 100px;
+    cursor: pointer;
+    color: white;
+    right: 0px;
+
+
+    }
+.isHidden {
+        display: none !important;
     }
