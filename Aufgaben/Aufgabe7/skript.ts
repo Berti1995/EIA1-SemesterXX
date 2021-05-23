@@ -66,6 +66,8 @@ function deleteRemix(): void {
 }
 
 //play/stop funktion//
+
+
 playBtn.addEventListener("click", function (): void {
     changeClasses(this, stopBtn);
 });
