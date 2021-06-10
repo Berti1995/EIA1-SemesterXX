@@ -36,6 +36,9 @@ var inputDOMElement;
 var addButtonDOMElement;
 var todosDOMElement;
 var counterDOMElement;
+var counterDOMElement2;
+var counterDOMElement3;
+var artyomStart = false;
 /**
  * Sobald der DOM geladen wurde können grundlegende DOM-Interaktionen
  * initialisiert werden
@@ -50,6 +53,8 @@ window.addEventListener("load", function () {
     addButtonDOMElement = document.querySelector("#addButton");
     todosDOMElement = document.querySelector("#todos");
     counterDOMElement = document.querySelector("#counter");
+    counterDOMElement2 = document.querySelector("#counter2");
+    counterDOMElement3 = document.querySelector("#counter3");
     /**
      * Jetzt da der DOM verfügbar ist kann auch ein Event-Listener
      * auf den AddToDo Button gesetzt werden.
@@ -103,9 +108,31 @@ function drawListToDOM() {
         _loop_1(index);
     }
     updateCounter();
+    openCounter();
+    doneCounter();
 }
 function updateCounter() {
     counterDOMElement.innerHTML = todoInterFace.length + " in total";
+}
+function openCounter() {
+    var indexzaehleropen = 0;
+    for (var index = 0; index < todoInterFace.length; index++) {
+        if (todoInterFace[index].checked == false) {
+            indexzaehleropen++;
+            counterDOMElement2.innerHTML = indexzaehleropen + " open";
+        }
+    }
+    counterDOMElement2.innerHTML = indexzaehleropen + " open";
+}
+function doneCounter() {
+    var indexzaehleropen = 0;
+    for (var index = 0; index < todoInterFace.length; index++) {
+        if (todoInterFace[index].checked == true) {
+            indexzaehleropen++;
+            counterDOMElement3.innerHTML = indexzaehleropen + " done";
+        }
+    }
+    counterDOMElement3.innerHTML = indexzaehleropen + " done";
 }
 /**
  * Ein neues ToDo wird folgendermaßen erstellt:
@@ -178,4 +205,38 @@ function deleteTodo(index) {
      */
     drawListToDOM();
 }
+window.addEventListener("load", function () {
+    var recordBtn = document.querySelector("#voicebutton");
+    var artyom = new Artyom();
+    artyom.addCommands({
+        indexes: ["erstelle Aufgabe *"],
+        smart: true,
+        action: function (i, wildcard) {
+            todoInterFace.unshift({
+                content: wildcard,
+                checked: false
+            });
+            inputDOMElement.value = "";
+            drawListToDOM();
+            console.log("Neue Aufgabe wird erstellt: " + wildcard);
+        }
+    });
+    function startContinuousArtyom() {
+        artyom.fatality();
+        setTimeout(function () {
+            artyom.initialize({
+                lang: "de-DE",
+                continuous: true,
+                listen: true,
+                interimResults: true,
+                debug: true
+            }).then(function () {
+                console.log("Ready!");
+            });
+        }, 250);
+    }
+    recordBtn.addEventListener("click", function (e) {
+        startContinuousArtyom();
+    });
+});
 //# sourceMappingURL=script.js.map

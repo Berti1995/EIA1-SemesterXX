@@ -13,6 +13,14 @@ main {
     color: grey;
 }
 
+#counter2 {
+    color: grey;
+}
+
+#counter3 {
+    color: grey;
+}
+
 .inputGroup {
     position: relative;
 }

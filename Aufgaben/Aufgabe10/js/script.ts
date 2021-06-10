@@ -42,6 +42,9 @@ var inputDOMElement: HTMLInputElement;
 var addButtonDOMElement: HTMLElement;
 var todosDOMElement: HTMLElement;
 var counterDOMElement: HTMLElement;
+var counterDOMElement2: HTMLElement;
+var counterDOMElement3: HTMLElement;
+var artyomStart: boolean = false;
 
 /**
  * Sobald der DOM geladen wurde können grundlegende DOM-Interaktionen
@@ -58,6 +61,8 @@ window.addEventListener("load", function(): void {
     addButtonDOMElement = document.querySelector("#addButton");
     todosDOMElement = document.querySelector("#todos");
     counterDOMElement = document.querySelector("#counter");
+    counterDOMElement2 = document.querySelector("#counter2");
+    counterDOMElement3 = document.querySelector("#counter3");
 
     /**
      * Jetzt da der DOM verfügbar ist kann auch ein Event-Listener
@@ -117,11 +122,43 @@ function drawListToDOM(): void {
     }
 
     updateCounter();
+    openCounter();
+    doneCounter();
 }
 
 function updateCounter(): void {
     counterDOMElement.innerHTML = todoInterFace.length + " in total";
 }
+
+function openCounter(): void {
+    var indexzaehleropen: number = 0;
+    for (let index: number = 0; index < todoInterFace.length; index++) {
+        if (todoInterFace[index].checked == false) {
+            indexzaehleropen++;
+            counterDOMElement2.innerHTML = indexzaehleropen + " open";
+
+        }
+
+    }
+    counterDOMElement2.innerHTML = indexzaehleropen + " open";
+
+}
+
+function doneCounter(): void {
+    var indexzaehleropen: number = 0;
+    for (let index: number = 0; index < todoInterFace.length; index++) {
+        if (todoInterFace[index].checked == true) {
+            indexzaehleropen++;
+            counterDOMElement3.innerHTML = indexzaehleropen + " done";
+
+        }
+
+    }
+    counterDOMElement3.innerHTML = indexzaehleropen + " done";
+
+}
+
+
 
 /**
  * Ein neues ToDo wird folgendermaßen erstellt:
@@ -167,6 +204,9 @@ function addTodo(): void {
  */
 function toggleCheckState(index: number): void {
 
+
+
+
     /**
      * Das Array, , das den Checked- / Uncheck-Status der ToDos abbildet,
      * muss an jener Stelle, an der das entsprechende ToDo steht (nämlich
@@ -208,3 +248,41 @@ function deleteTodo(index: number): void {
      */
     drawListToDOM();
 }
+
+declare var Artyom: any;
+  
+window.addEventListener("load", function () {
+    var recordBtn: HTMLElement = document.querySelector("#voicebutton");
+    var artyom = new Artyom();
+    artyom.addCommands({
+        indexes: ["erstelle Aufgabe *"],
+        smart: true,
+        action: function (i: any, wildcard: string) {
+            todoInterFace.unshift({
+                content: wildcard,
+                checked: false
+            });
+            inputDOMElement.value = "";
+                drawListToDOM();
+                console.log("Neue Aufgabe wird erstellt: " + wildcard);
+
+        }
+    });
+    function startContinuousArtyom() {
+        artyom.fatality();
+        setTimeout(function () {
+            artyom.initialize({
+                lang: "de-DE",
+                continuous: true,
+                listen: true,
+                interimResults: true,
+                debug: true
+            }).then(function () {
+                console.log("Ready!");
+            });
+        }, 250);
+    }
+    recordBtn.addEventListener("click", (e) => {
+    startContinuousArtyom();
+     });
+});
